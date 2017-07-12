@@ -1,0 +1,5 @@
+D:\GitRepo\Serialization-Repo\Serialization\Serialization\bin\Debug\Serialization.exe.config
+D:\GitRepo\Serialization-Repo\Serialization\Serialization\bin\Debug\Serialization.exe
+D:\GitRepo\Serialization-Repo\Serialization\Serialization\bin\Debug\Serialization.pdb
+D:\GitRepo\Serialization-Repo\Serialization\Serialization\obj\Debug\Serialization.exe
+D:\GitRepo\Serialization-Repo\Serialization\Serialization\obj\Debug\Serialization.pdb
