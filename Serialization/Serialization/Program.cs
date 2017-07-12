@@ -46,6 +46,14 @@ namespace Serialization
 
             return dsp;
         }
+        private static int CalculateAge(Person p)
+        {
+            int birth = (int)p.BirthDate.Year;
+            int today = (int)DateTime.Now.Year;
+
+            return today - birth;
+
+        }
 
         static void Main(string[] args)
         {
@@ -58,6 +66,7 @@ namespace Serialization
 
                 Console.WriteLine(dsp.Name);
                 Console.WriteLine(dsp.BirthDate);
+                Console.WriteLine(CalculateAge(dsp));
                 Console.ReadKey();
             }
 

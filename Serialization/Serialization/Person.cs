@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Serialization
 {
     [Serializable]
-    class Person
+    class Person : IDeserializationCallback
     {
         private string name;
 
@@ -18,7 +18,7 @@ namespace Serialization
             set { name = value; }
         }
 
-        private DateTime birthDate;
+        [NonSerialized]private DateTime birthDate;
 
         public DateTime BirthDate
         {
@@ -39,6 +39,11 @@ namespace Serialization
         public override string ToString()
         {
             return (String.Format("name: {0}, birth date: {1}", this.name, this.birthDate));
+        }
+
+         void IDeserializationCallback.OnDeserialization(object sender)
+        {
+         
         }
     }
 }
