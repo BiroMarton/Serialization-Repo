@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Serialization
 {
     [Serializable]
-    class Person : IDeserializationCallback
+    class Person : ISerializable
     {
         private string name;
 
@@ -18,7 +18,7 @@ namespace Serialization
             set { name = value; }
         }
 
-        [NonSerialized]private DateTime birthDate;
+        private DateTime birthDate;
 
         public DateTime BirthDate
         {
@@ -41,9 +41,23 @@ namespace Serialization
             return (String.Format("name: {0}, birth date: {1}", this.name, this.birthDate));
         }
 
-         void IDeserializationCallback.OnDeserialization(object sender)
+        public int CalculateAge()
         {
-         
+            int birth = (int)BirthDate.Year;
+            int today = (int)DateTime.Now.Year;
+
+            return today - birth;
+
+        }
+
+        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("Name", name);
+            info.AddValue("DOB", birthDate);
+
+            name = info.GetString("Name");
+            birthDate = info.GetDateTime("DOB");
+            CalculateAge();
         }
     }
 }
