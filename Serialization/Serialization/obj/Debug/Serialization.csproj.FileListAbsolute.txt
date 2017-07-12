@@ -3,3 +3,4 @@ D:\GitRepo\Serialization-Repo\Serialization\Serialization\bin\Debug\Serializatio
 D:\GitRepo\Serialization-Repo\Serialization\Serialization\bin\Debug\Serialization.pdb
 D:\GitRepo\Serialization-Repo\Serialization\Serialization\obj\Debug\Serialization.exe
 D:\GitRepo\Serialization-Repo\Serialization\Serialization\obj\Debug\Serialization.pdb
+D:\GitRepo\Serialization-Repo\Serialization\Serialization\obj\Debug\Serialization.csprojResolveAssemblyReference.cache

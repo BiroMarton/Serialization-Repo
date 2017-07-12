@@ -28,15 +28,43 @@ namespace Serialization
             fs.Close();
         }
 
-            static void Main(string[] args)
+        private static Person Deserialize()
         {
+           
 
+            
+            FileStream fs = new FileStream("Person.Dat", FileMode.Open);
+
+            
+            BinaryFormatter bf = new BinaryFormatter();
+
+            
+            Person  dsp = (Person)bf.Deserialize(fs);
+
+            
+            fs.Close();
+
+            return dsp;
+        }
+
+        static void Main(string[] args)
+        {
+            if(args.Length > 3) { 
             Person person = new Person(args[0], new DateTime(Convert.ToInt32(args[1]), Convert.ToInt32(args[2]), Convert.ToInt32(args[3])));;
             Serialize(person);
+            }
+            else {
+                Person dsp = Deserialize();
+
+                Console.WriteLine(dsp.Name);
+                Console.WriteLine(dsp.BirthDate);
+                Console.ReadKey();
+            }
 
 
-  
-            
+
+
+
         }
     }
 }
